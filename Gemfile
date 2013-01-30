@@ -1,15 +1,26 @@
 source "http://rubygems.org"
-# Add dependencies required to use your gem here.
-# Example:
-#   gem "activesupport", ">= 2.3.5"
 
-# Add dependencies to develop your gem here.
-# Include everything needed to run rake, tests, features, etc.
 group :development do
-  gem "minitest", ">= 0"
-  gem "yard", "~> 0.7"
-  gem "rdoc", "~> 3.12"
-  gem "bundler", "~> 1.0.0"
-  gem "jeweler", "~> 1.8.4"
-  gem "rcov", ">= 0"
+
+  gem "yard"
+  gem "redcarpet", :platforms => [:mri, :rbx]
+
+  gem "bundler"
+  gem "jeweler", :git => "https://github.com/chetan/jeweler.git", :branch => "bixby"
+  gem "pry"
+  gem "debugger",     :platforms => :mri_19
+  gem "debugger-pry", :require => "debugger/pry", :platforms => :mri_19
+
+  gem "simplecov",    :platforms => [:mri_19, :rbx], :git => "https://github.com/chetan/simplecov.git", :branch => "inline_nocov"
+
+  gem "minitest",     :platforms => [:mri_19, :rbx]
+  gem "webmock",      :require => false
+  gem "mocha",        :require => false
+
+  gem "test_guard", :git => "https://github.com/chetan/test_guard.git"
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require => false
+
 end
+
