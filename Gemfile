@@ -1,5 +1,15 @@
 source "http://rubygems.org"
 
+gem 'bixby-common', :git => "https://github.com/chetan/bixby-common.git"
+
+gem "api-auth", :git => "https://github.com/chetan/api_auth.git", :branch => "non_rails"
+
+gem 'multi_json'
+gem 'oj'
+gem 'httpi',        :git => "https://github.com/chetan/httpi.git",
+                    :branch => "chunked_responses"
+gem 'curb'
+
 group :development do
 
   gem "yard"
