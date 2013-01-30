@@ -1,7 +1,15 @@
 
 require "api-auth"
 
+require "bixby-common"
+require "bixby-client/modules"
+
 module Bixby
+
+  class << self
+    # Singleton which holds an active instance of a Bixby::Client
+    attr_accessor :client
+  end
 
   # Implements the Bixby client API
   class Client
