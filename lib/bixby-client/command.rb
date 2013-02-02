@@ -57,6 +57,24 @@ class Command
     @subclasses << subclass
   end
 
+  module UseBundle
+    def use_bundle(name)
+      d = File.join(Bixby.repo_path, name, "lib")
+      $: << d
+      if File.directory? d then
+        Dir.glob(File.join(d, "*.rb")).each{ |f| require f }
+      end
+      $:.pop # remove temp lib
+    end
+  end
+
 end # Command
 end # Bixby
 
+module Bixby
+  extend Bixby::Command::UseBundle
+end
+
+class Object
+  include Bixby::Command::UseBundle
+end
