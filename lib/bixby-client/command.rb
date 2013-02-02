@@ -4,29 +4,15 @@ require "bixby-client/platform_util"
 require "digest"
 require "fileutils"
 
-require "mixlib/cli"
+require "systemu"
 
 module Bixby
 class Command
 
-  include Mixlib::CLI
-
   include Bixby::Log
   include Bixby::PlatformUtil
 
-  option :help,
-      :short          => "-h",
-      :long           => "--help",
-      :description    => "Print this help",
-      :boolean        => true,
-      :show_options   => true,
-      :exit           => 0
-
   def initialize(options=nil)
-    if not @skip_parse then
-      super()
-      @argv = parse_options()
-    end
   end
 
   # retrieve all loaded subclasses of this classs
@@ -64,8 +50,6 @@ class Command
   private
 
   def self.inherited(subclass)
-    subclass.extend(Mixlib::CLI::ClassMethods)
-    subclass.instance_variable_set(:@options, @options)
     if superclass.respond_to? :inherited
       superclass.inherited(subclass)
     end
