@@ -3,6 +3,7 @@ require "api-auth"
 
 require "bixby-common"
 require "bixby-client/modules"
+require "bixby-client/command"
 
 module Bixby
 

@@ -1,5 +1,5 @@
 
-module BixbyClient
+module Bixby
   class TestCase < MiniTest::Unit::TestCase
 
     def setup

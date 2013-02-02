@@ -1,5 +1,8 @@
 require 'helper'
 
-class TestBixbyClient < BixbyClient::TestCase
+module Bixby
+class TestBixbyClient < TestCase
+
+end
 end
 
