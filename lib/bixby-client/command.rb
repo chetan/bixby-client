@@ -12,7 +12,7 @@ class Command
   include Bixby::Log
   include Bixby::PlatformUtil
 
-  def initialize(options=nil)
+  def initialize()
   end
 
   # retrieve all loaded subclasses of this classs
