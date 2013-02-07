@@ -54,3 +54,7 @@ end # Bixby
 module Bixby
   extend Bixby::ScriptUtil::UseBundle
 end
+
+class Object
+  include Bixby::ScriptUtil::UseBundle
+end
