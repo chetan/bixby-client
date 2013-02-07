@@ -12,10 +12,10 @@ module Bixby
         repos.each do |repo|
           next if not File.directory? repo
 
-          d = File.join(repo, name, "lib")
-          $: << d
-          if File.directory? d then
-            Dir.glob(File.join(d, "*.rb")).each{ |f| require f }
+          lib = File.join(repo, name, "lib")
+          $: << lib
+          if File.directory? lib then
+            Dir.glob(File.join(lib, "*.rb")).each{ |f| require f }
           end
         end
       end
