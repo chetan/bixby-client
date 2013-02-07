@@ -8,8 +8,22 @@ require "bixby-client/command"
 module Bixby
 
   class << self
-    # Singleton which holds an active instance of a Bixby::Client
-    attr_accessor :client
+    def client=(client)
+      @client = client
+    end
+
+    def client
+      @client ||= create_client()
+    end
+
+
+    private
+
+    def create_client
+      return nil if not ENV["BIXBY_HOME"]
+      Agent.create() # indirectly sets @client
+      @client
+    end
   end
 
   # Implements the Bixby client API
