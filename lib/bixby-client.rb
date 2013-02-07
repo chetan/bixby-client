@@ -31,7 +31,7 @@ module Bixby
 
     # Helper for creating absolute paths inside BIXBY_HOME
     def path(*args)
-      File.join(root, *args)
+      File.expand_path(File.join(root, *args))
     end
 
 
