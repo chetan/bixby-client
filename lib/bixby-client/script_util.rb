@@ -4,13 +4,20 @@ module Bixby
   module ScriptUtil
 
     module UseBundle
+
+      # Load the libraries for the given bundle. Searches all available
+      # repositories.
       def use_bundle(name)
-        d = File.join(Bixby.repo_path, name, "lib")
-        $: << d
-        if File.directory? d then
-          Dir.glob(File.join(d, "*.rb")).each{ |f| require f }
+        repos = Dir.glob(File.join(Bixby.repo_path, "*"))
+        repos.each do |repo|
+          next if not File.directory? repo
+
+          d = File.join(repo, name, "lib")
+          $: << d
+          if File.directory? d then
+            Dir.glob(File.join(d, "*.rb")).each{ |f| require f }
+          end
         end
-        $:.pop # remove temp lib
       end
     end
 
