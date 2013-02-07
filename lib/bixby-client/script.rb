@@ -10,7 +10,7 @@ class Object
 
   # override to create logger based on script name
   def log
-    @log || = Logging.logger[File.basename($0)]
+    @log ||= Logging.logger[File.basename($0)]
   end
 
 end
