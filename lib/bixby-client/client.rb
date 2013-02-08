@@ -1,4 +1,8 @@
 
+require "curb"
+require "httpi"
+require "api-auth"
+
 module Bixby
 
   # Implements the Bixby client API
