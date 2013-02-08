@@ -35,7 +35,7 @@ module Bixby
     #    }
     #
     def self.put_check_result(results)
-      req = JsonRequest.new("metrics:put_check_result", [ reports ])
+      req = JsonRequest.new("metrics:put_check_result", [ results ])
       return Bixby.client.exec_api(req)
     end
 
