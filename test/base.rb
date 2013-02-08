@@ -4,6 +4,7 @@ module Bixby
 
     def setup
       super
+      ENV["BIXBY_HOME"] = File.expand_path(File.join(File.dirname(__FILE__), "support", "root_dir"))
     end
 
     def teardown

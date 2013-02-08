@@ -27,9 +27,19 @@ module Bixby
     private
 
     def create_client
-      return nil if not root
-      Agent.create() # indirectly sets @client
-      @client
+      raise "#{root} not found" if not root
+
+      config_file = Bixby.path("etc", "bixby.yml")
+      raise "#{config_file} not found" if not File.exists? config_file
+
+      config = YAML.load_file(config_file)
+      if not config.kind_of? Hash or
+        !(config.include? "access_key" and config.include? "secret_key") then
+
+        raise "invalid config file #{config_file}"
+      end
+
+      return Bixby::Client.new(config["access_key"], config["secret_key"])
     end
   end
 
