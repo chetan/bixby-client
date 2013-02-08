@@ -1,7 +1,7 @@
 
 require "bixby-client"
 require "fileutils"
-require "systemu"
+require "mixlib/shellout"
 
 Bixby::Log.setup_logger()
 

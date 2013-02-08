@@ -10,6 +10,8 @@ gem 'httpi',        :git => "https://github.com/chetan/httpi.git",
                     :branch => "chunked_responses"
 gem 'curb'
 
+gem 'mixlib-shellout'
+
 group :development do
 
   gem "yard"

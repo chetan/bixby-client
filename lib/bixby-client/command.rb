@@ -2,7 +2,7 @@
 require "digest"
 require "fileutils"
 
-require "systemu"
+require "mixlib/shellout"
 
 module Bixby
 class Command
