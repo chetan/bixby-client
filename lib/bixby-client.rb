@@ -39,6 +39,7 @@ module Bixby
         raise "invalid config file #{config_file}"
       end
 
+      Bixby.manager_uri = config["manager_uri"]
       return Bixby::Client.new(config["access_key"], config["secret_key"])
     end
   end
