@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/chetan/bixby-common.git
-  revision: abc5720e28d2b597f4945c14f30fa81c23946fb9
+  revision: cd7ec678b7d4fdfd09190b76938833abed7d98a8
   specs:
     bixby-common (0.3.6)
       httpi
