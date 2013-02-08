@@ -1,4 +1,6 @@
 
+require "bixby-client/patch/shellout"
+
 module Bixby
 
   module ScriptUtil

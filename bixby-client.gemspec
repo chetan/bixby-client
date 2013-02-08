@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
     "lib/bixby-client/modules/inventory.rb",
     "lib/bixby-client/modules/metrics.rb",
     "lib/bixby-client/modules/repository.rb",
+    "lib/bixby-client/patch/shellout.rb",
     "lib/bixby-client/platform_util.rb",
     "lib/bixby-client/script.rb",
     "lib/bixby-client/script_util.rb",
