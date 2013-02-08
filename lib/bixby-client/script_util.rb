@@ -48,6 +48,17 @@ module Bixby
       return buff.join('')
     end
 
+    # Simple wrapper around Mixlib::ShellOut
+    #
+    # @param [Array] args
+    #
+    # @return [Mixlib::ShellOut]
+    def systemu(*args)
+      cmd = Mixlib::ShellOut.new(*args)
+      cmd.run_command
+      cmd
+    end
+
   end # ScriptUtil
 end # Bixby
 
