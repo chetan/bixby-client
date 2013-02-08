@@ -3,6 +3,8 @@ require "bixby-client"
 require "fileutils"
 require "systemu"
 
+Bixby::Log.setup_logger()
+
 class Object
   include Bixby::PlatformUtil
   include Bixby::ScriptUtil
