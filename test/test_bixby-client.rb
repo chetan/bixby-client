@@ -9,7 +9,7 @@ class TestBixbyClient < TestCase
     assert URI.parse(Bixby.manager_uri)
 
     ENV["BIXBY_HOME"] = "/folaksdf"
-    Bixby.instance_eval{ @client = nil; @root = nil }
+    Bixby.instance_eval{ @client = nil }
     assert_throws(RuntimeError) do
       assert Bixby.client
     end
