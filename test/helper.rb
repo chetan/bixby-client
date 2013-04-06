@@ -24,5 +24,4 @@ ENV["RUBYLIB"] = $:.first
 require "bixby-client"
 require "base"
 
-Dir.glob(File.dirname(__FILE__) + "/../lib/**/*.rb").each{ |f| require f }
 MiniTest::Unit.autorun
