@@ -15,7 +15,7 @@ module Bixby
       return res.data
     end
 
-    # Download athe given list of files
+    # Download the given list of files
     #
     # @param [CommandSpec] cmd    CommandSpec representing the Bundle to which the files belong
     # @param [Hash] files         Hash, returned from #list_files
