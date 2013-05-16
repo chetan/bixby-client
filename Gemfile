@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-gem 'bixby-common', :git => "https://github.com/chetan/bixby-common.git"
+gem 'bixby-common'
+# gem 'bixby-common', :path => '../common'
 
 gem "api-auth", :git => "https://github.com/chetan/api_auth.git", :branch => "non_rails"
 
@@ -25,7 +26,7 @@ group :development do
 
   gem "simplecov",    :platforms => [:mri_19, :rbx], :git => "https://github.com/chetan/simplecov.git", :branch => "inline_nocov"
 
-  gem "minitest",     :platforms => [:mri_19, :rbx]
+  gem "minitest",     "~> 4.7", :platforms => [:mri_19, :rbx]
   gem "webmock",      :require => false
   gem "mocha",        :require => false
 
