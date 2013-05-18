@@ -8,6 +8,8 @@ module Bixby
   # Implements the Bixby client API
   class Client
 
+    include Bixby::Log
+
     # Create a new Client
     #
     # @param [String] access_key
