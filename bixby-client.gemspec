@@ -9,19 +9,19 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chetan Sarva"]
-  s.date = "2013-05-18"
+  s.date = "2013-07-23"
   s.description = "Bixby Client"
   s.email = "chetan@pixelcop.net"
   s.executables = ["bixby"]
   s.extra_rdoc_files = [
-    "LICENSE.txt",
+    "LICENSE",
     "README.rdoc"
   ]
   s.files = [
     ".document",
     "Gemfile",
     "Gemfile.lock",
-    "LICENSE.txt",
+    "LICENSE",
     "README.rdoc",
     "Rakefile",
     "VERSION",
@@ -53,11 +53,11 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/chetan/bixby-client"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.25"
+  s.rubygems_version = "2.0.3"
   s.summary = "Bixby Client"
 
   if s.respond_to? :specification_version then
-    s.specification_version = 3
+    s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<bixby-common>, [">= 0"])
