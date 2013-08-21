@@ -1,9 +1,4 @@
 
-require "digest"
-require "fileutils"
-
-require "mixlib/shellout"
-
 module Bixby
 class Command
 

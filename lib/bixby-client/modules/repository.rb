@@ -1,4 +1,6 @@
 
+require "fileutils"
+
 module Bixby
   module Repository
 
