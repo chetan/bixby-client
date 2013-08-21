@@ -14,7 +14,7 @@ class Command
   def initialize()
   end
 
-  # retrieve all loaded subclasses of this classs
+  # retrieve all loaded subclasses of this class
   #
   # @return [Array<Class>] List of subclasses
   def self.subclasses
