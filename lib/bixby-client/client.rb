@@ -1,6 +1,4 @@
 
-require "curb"
-require "httpi"
 require "api-auth"
 
 module Bixby
@@ -47,8 +45,7 @@ module Bixby
     def exec_api(json_req)
       begin
         req = sign_request(json_req)
-        res = HTTPI.post(req).body
-        return JsonResponse.from_json(res)
+        return HttpChannel.new(api_uri).execute(req)
       rescue Curl::Err::CurlError => ex
         return JsonResponse.new("fail", ex.message)
       end
@@ -63,10 +60,8 @@ module Bixby
       begin
         req = sign_request(json_req)
         File.open(download_path, "w") do |io|
-          req.on_body { |d| io << d; d.length }
-          HTTPI.post(req)
+          return HttpChannel.new(api_uri).execute_download(req) { |d| io << d; d.length }
         end
-        return JsonResponse.new("success")
       rescue Curl::Err::CurlError => ex
         return JsonResponse.new("fail", ex.message)
       end
@@ -75,21 +70,16 @@ module Bixby
 
     private
 
-    # Create a signed request
+    # Create a signed request if crypto is enabled
     #
     # @param [JsonRequest] json_req
     #
-    # @return [HTTPI::Request]
+    # @return [JsonRequest]
     def sign_request(json_req)
-      post = json_req.to_json
-      req = HTTPI::Request.new(:url => api_uri, :body => post)
-      req.headers["Content-Type"] = "application/json"
-
       if crypto_enabled? and not @secret_key.nil? then
-        ApiAuth.sign!(req, @access_key, @secret_key)
+        return Bixby::SignedJsonRequest.new(json_req, @access_key, @secret_key)
       end
-
-      return req
+      return json_req
     end
 
     def api_uri
