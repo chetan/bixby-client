@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem 'bixby-common'
 # gem 'bixby-common', :path => '../common'
 
-gem "api-auth", :git => "https://github.com/chetan/api_auth.git", :branch => "non_rails"
+gem "api-auth", :git => "https://github.com/chetan/api_auth.git", :branch => "bixby"
 
 gem 'multi_json'
 gem 'oj'
