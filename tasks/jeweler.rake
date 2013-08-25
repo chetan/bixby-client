@@ -8,6 +8,7 @@ Jeweler::Tasks.new do |gemspec|
   gemspec.email       = "chetan@pixelcop.net"
   gemspec.homepage    = "http://github.com/chetan/bixby-client"
   gemspec.authors     = ["Chetan Sarva"]
+  gemspec.license     = "MIT"
 
   gemspec.executables = %w{ bixby }
 
