@@ -3,15 +3,13 @@ source "https://rubygems.org"
 gem 'bixby-common'
 # gem 'bixby-common', :path => '../common'
 
-gem "api-auth", :git => "https://github.com/chetan/api_auth.git", :branch => "bixby"
-
 gem 'multi_json'
 gem 'oj'
-gem 'httpi',        :git => "https://github.com/chetan/httpi.git",
-                    :branch => "chunked_responses"
+gem 'httpi'
 gem 'curb'
-
 gem 'mixlib-shellout'
+
+gem "api-auth", :git => "https://github.com/chetan/api_auth.git", :branch => "bixby"
 
 group :development do
 
