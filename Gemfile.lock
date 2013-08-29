@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/chetan/jeweler.git
-  revision: 9b8b2376c79299b823a5e9aafae3d647df943b6f
+  revision: c83ba18b074e82415052e80499a770bff87bf944
   branch: bixby
   specs:
     jeweler (1.8.7)
@@ -50,7 +50,7 @@ GEM
     addressable (2.3.5)
     ansi (1.4.3)
     awesome_print (1.1.0)
-    bixby-common (0.4.0)
+    bixby-common (0.4.1)
       api-auth
       faye-websocket
       httpi
