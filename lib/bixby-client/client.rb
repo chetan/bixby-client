@@ -1,5 +1,6 @@
 
 require "api-auth"
+require "curb"
 
 module Bixby
 
