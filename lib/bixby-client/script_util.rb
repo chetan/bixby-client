@@ -21,7 +21,8 @@ module Bixby
           end
         end
       end
-    end
+
+    end # UseBundle
 
     include UseBundle
 
