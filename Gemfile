@@ -19,12 +19,12 @@ group :development do
   gem "bundler"
   gem "jeweler", :git => "https://github.com/chetan/jeweler.git", :branch => "bixby"
   gem "pry"
-  gem "debugger",     :platforms => :mri_19
-  gem "debugger-pry", :require => "debugger/pry", :platforms => :mri_19
+  gem "debugger",     :platforms => [:mri_19, :mri_20]
+  gem "debugger-pry", :require => "debugger/pry", :platforms => [:mri_19, :mri_20]
 
-  gem "simplecov",    :platforms => [:mri_19, :rbx], :git => "https://github.com/chetan/simplecov.git", :branch => "inline_nocov"
+  gem "simplecov",    :platforms => [:mri_19, :mri_20, :rbx], :git => "https://github.com/chetan/simplecov.git", :branch => "inline_nocov"
 
-  gem "minitest",     "~> 4.7", :platforms => [:mri_19, :rbx]
+  gem "minitest",     "~> 4.7", :platforms => [:mri_19, :mri_20, :rbx]
   gem "webmock",      :require => false
   gem "mocha",        :require => false
 
