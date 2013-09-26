@@ -8,8 +8,9 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 
-require 'test_guard'
-TestGuard.load_simplecov()
+require "awesome_print"
+require "micron"
+require "micron/minitest"
 
 # Load any HTTP clients before webmock so they can be stubbed
 # require 'curb'
@@ -24,4 +25,7 @@ ENV["RUBYLIB"] = $:.first
 require "bixby-client"
 require "base"
 
-MiniTest::Unit.autorun
+EasyCov.path = "coverage"
+EasyCov.filters << EasyCov::IGNORE_GEMS << EasyCov::IGNORE_STDLIB << EasyCov::IGNORE_TESTS
+
+EasyCov.start

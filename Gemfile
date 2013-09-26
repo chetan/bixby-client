@@ -23,8 +23,8 @@ group :development do
   gem "debugger-pry", :require => "debugger/pry", :platforms => [:mri_19, :mri_20]
 
   gem "simplecov",    :platforms => [:mri_19, :mri_20, :rbx], :git => "https://github.com/chetan/simplecov.git", :branch => "inline_nocov"
+  gem "micron", :github => "chetan/micron"
 
-  gem "minitest",     "~> 4.7", :platforms => [:mri_19, :mri_20, :rbx]
   gem "webmock",      :require => false
   gem "mocha",        :require => false
 
