@@ -2,6 +2,8 @@
 require "api-auth"
 require "curb"
 
+require "bixby-client/client/version"
+
 module Bixby
 
   # Implements the Bixby client API
