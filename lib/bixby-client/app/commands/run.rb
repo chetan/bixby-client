@@ -24,12 +24,13 @@ module Bixby
           end
 
           setup_env()
-          # fork do
-            exec(scripts.shift, *argv)
-          # end
+          exec(scripts.shift, *argv)
         end
 
+        # Setup the ENV for exec
         def setup_env
+          # stick ourselves in RUBYLIB to speedup exec time
+          ENV["RUBYLIB"] = File.expand_path("../../../..", __FILE__)
           ENV["RUBYOPT"] = '-rbixby-client/script'
         end
 
