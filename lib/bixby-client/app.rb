@@ -40,8 +40,8 @@ module Bixby
         subcmd = ARGV.shift
         commands.each do |c|
           if c.match(subcmd) then
-            c.new.run(global_options, ARGV)
-            exit 0
+            ret = c.new.run(global_options, ARGV)
+            exit (ret || 0)
           end
         end
 
