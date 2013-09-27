@@ -16,6 +16,9 @@ module Bixby
           if scripts.kind_of?(Array)
             if scripts.size > 1 then
               $stderr.puts "Found #{scripts.size} scripts matching '#{str}'. Please be more explicit"
+              scripts.each do |s|
+                puts " * #{s}"
+              end
               return 1
             elsif scripts.empty? then
               $stderr.puts "No scripts matched '#{str}'. Try again"
