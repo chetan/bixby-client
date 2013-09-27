@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+ENV["BIXBY_HOME"] ||= "/opt/bixby"
+
+$: << File.expand_path("../../lib", __FILE__)
+require 'bixby-client/app'
