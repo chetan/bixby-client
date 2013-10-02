@@ -89,6 +89,7 @@ GEM
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.3.0)
     ffi (1.9.0)
+    fuzzy_file_finder (1.0.4)
     git (1.2.6)
     github_api (0.10.1)
       addressable
@@ -178,6 +179,7 @@ DEPENDENCIES
   curb
   debugger
   debugger-pry
+  fuzzy_file_finder
   httpi
   jeweler!
   micron!

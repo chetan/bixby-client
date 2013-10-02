@@ -8,6 +8,7 @@ gem 'oj'
 gem 'httpi'
 gem 'curb'
 gem 'mixlib-shellout'
+gem 'fuzzy_file_finder'
 
 gem "api-auth", :git => "https://github.com/chetan/api_auth.git", :branch => "bixby"
 

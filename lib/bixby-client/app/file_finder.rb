@@ -1,4 +1,6 @@
 
+require "fuzzy_file_finder"
+
 module Bixby
   module App
     class FileFinder
@@ -16,9 +18,20 @@ module Bixby
         return s if File.exists? s
 
         # try searching
-        return find_all_files(@root).find_all{ |f| f.include? script }.sort { |a,b|
+        matches = find_all_files(@root).find_all{ |f| f.include? script }.sort { |a,b|
           ld(script, File.basename(a)) <=> ld(script, File.basename(b))
         }
+
+        return matches if matches.size == 1 # only one result, just return it
+
+        # fuzzy search
+        fuzzy_matches = FuzzyFileFinder.new(@root).find(script.dup).
+                          sort_by { |m| -m[:score] }.
+                          map{ |f| f[:path] }.
+                          find_all{ |f| keep?(f, @root) }
+
+        # return the union of all unique matches
+        return fuzzy_matches + (matches - fuzzy_matches)
       end
 
       def find_all_files(path)
@@ -29,15 +42,16 @@ module Bixby
             ret << find_all_files(File.expand_path(f))
           end
 
-          keep?(f) && File.dirname(f) != path
+          keep?(f, path)
         }
 
         return ret.flatten
       end
 
-      def keep?(f)
+      def keep?(f, path)
         !File.directory? f and
           f !~ /\.(json|test.*)|\/digest$/ and
+          File.dirname(f) != path and
           File.dirname(f) !~ /\/(test|lib)$/
       end
 
