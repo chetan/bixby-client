@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chetan Sarva"]
-  s.date = "2013-09-27"
+  s.date = "2013-10-02"
   s.description = "Bixby Client"
   s.email = "chetan@pixelcop.net"
   s.executables = ["bixby"]
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
     "lib/bixby-client/app.rb",
     "lib/bixby-client/app/command.rb",
     "lib/bixby-client/app/commands/run.rb",
+    "lib/bixby-client/app/file_finder.rb",
     "lib/bixby-client/client.rb",
     "lib/bixby-client/client/version.rb",
     "lib/bixby-client/command.rb",
@@ -66,7 +67,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/chetan/bixby-client"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "2.1.0"
+  s.rubygems_version = "2.1.5"
   s.summary = "Bixby Client"
 
   if s.respond_to? :specification_version then
@@ -79,6 +80,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<httpi>, [">= 0"])
       s.add_runtime_dependency(%q<curb>, [">= 0"])
       s.add_runtime_dependency(%q<mixlib-shellout>, [">= 0"])
+      s.add_runtime_dependency(%q<fuzzy_file_finder>, [">= 0"])
       s.add_runtime_dependency(%q<api-auth>, [">= 0"])
       s.add_development_dependency(%q<yard>, [">= 0"])
       s.add_development_dependency(%q<redcarpet>, [">= 0"])
@@ -102,6 +104,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<httpi>, [">= 0"])
       s.add_dependency(%q<curb>, [">= 0"])
       s.add_dependency(%q<mixlib-shellout>, [">= 0"])
+      s.add_dependency(%q<fuzzy_file_finder>, [">= 0"])
       s.add_dependency(%q<api-auth>, [">= 0"])
       s.add_dependency(%q<yard>, [">= 0"])
       s.add_dependency(%q<redcarpet>, [">= 0"])
@@ -126,6 +129,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<httpi>, [">= 0"])
     s.add_dependency(%q<curb>, [">= 0"])
     s.add_dependency(%q<mixlib-shellout>, [">= 0"])
+    s.add_dependency(%q<fuzzy_file_finder>, [">= 0"])
     s.add_dependency(%q<api-auth>, [">= 0"])
     s.add_dependency(%q<yard>, [">= 0"])
     s.add_dependency(%q<redcarpet>, [">= 0"])
