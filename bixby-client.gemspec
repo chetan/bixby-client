@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chetan Sarva"]
-  s.date = "2013-10-02"
+  s.date = "2013-10-07"
   s.description = "Bixby Client"
   s.email = "chetan@pixelcop.net"
   s.executables = ["bixby"]
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE",
@@ -44,6 +45,8 @@ Gem::Specification.new do |s|
     "lib/bixby-client/platform_util.rb",
     "lib/bixby-client/script.rb",
     "lib/bixby-client/script_util.rb",
+    "tasks/coverage.rake",
+    "tasks/coveralls.rake",
     "tasks/jeweler.rake",
     "tasks/test.rake",
     "tasks/yard.rake",
@@ -91,6 +94,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<debugger-pry>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<micron>, [">= 0"])
+      s.add_development_dependency(%q<coveralls>, [">= 0"])
       s.add_development_dependency(%q<webmock>, [">= 0"])
       s.add_development_dependency(%q<mocha>, [">= 0"])
       s.add_development_dependency(%q<test_guard>, [">= 0"])
@@ -115,6 +119,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<debugger-pry>, [">= 0"])
       s.add_dependency(%q<simplecov>, [">= 0"])
       s.add_dependency(%q<micron>, [">= 0"])
+      s.add_dependency(%q<coveralls>, [">= 0"])
       s.add_dependency(%q<webmock>, [">= 0"])
       s.add_dependency(%q<mocha>, [">= 0"])
       s.add_dependency(%q<test_guard>, [">= 0"])
@@ -140,6 +145,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<debugger-pry>, [">= 0"])
     s.add_dependency(%q<simplecov>, [">= 0"])
     s.add_dependency(%q<micron>, [">= 0"])
+    s.add_dependency(%q<coveralls>, [">= 0"])
     s.add_dependency(%q<webmock>, [">= 0"])
     s.add_dependency(%q<mocha>, [">= 0"])
     s.add_dependency(%q<test_guard>, [">= 0"])
