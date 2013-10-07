@@ -25,6 +25,7 @@ group :development do
 
   gem "simplecov",    :platforms => [:mri_19, :mri_20, :rbx], :git => "https://github.com/chetan/simplecov.git", :branch => "inline_nocov"
   gem "micron", :github => "chetan/micron"
+  gem "coveralls", :require => false
 
   gem "webmock",      :require => false
   gem "mocha",        :require => false
