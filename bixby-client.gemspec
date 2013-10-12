@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chetan Sarva"]
-  s.date = "2013-10-07"
+  s.date = "2013-10-12"
   s.description = "Bixby Client"
   s.email = "chetan@pixelcop.net"
   s.executables = ["bixby"]
@@ -37,6 +37,9 @@ Gem::Specification.new do |s|
     "lib/bixby-client/client.rb",
     "lib/bixby-client/client/version.rb",
     "lib/bixby-client/command.rb",
+    "lib/bixby-client/model.rb",
+    "lib/bixby-client/model/base.rb",
+    "lib/bixby-client/model/host.rb",
     "lib/bixby-client/modules.rb",
     "lib/bixby-client/modules/inventory.rb",
     "lib/bixby-client/modules/metrics.rb",
