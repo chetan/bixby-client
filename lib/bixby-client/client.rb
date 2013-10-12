@@ -70,6 +70,20 @@ module Bixby
       end
     end
 
+    # Sign the given request
+    #
+    # @param [HTTPI::Request] request
+    def sign_http_request(request)
+      ApiAuth.sign!(request, @access_key, @secret_key)
+    end
+
+    # Get the manager URI
+    #
+    # @return [String]
+    def manager_uri
+      Bixby.manager_uri
+    end
+
 
     private
 
