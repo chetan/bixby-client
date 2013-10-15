@@ -28,7 +28,7 @@ module Bixby
     private
 
     def create_client
-      raise "#{root} not found" if not root
+      raise "BIXBY_HOME not set" if not root
 
       config_file = Bixby.path("etc", "bixby.yml")
       raise "#{config_file} not found" if not File.exists? config_file
