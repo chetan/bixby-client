@@ -2,6 +2,7 @@
 module Bixby
   module Model
     class Base
+
       class << self
 
         def get(url)
@@ -13,7 +14,13 @@ module Bixby
           if res.error? then
             raise "error" # TODO
           end
-          MultiJson.load(res.body)
+
+          data = MultiJson.load(res.body)
+          if data.kind_of? Array then
+            return data.map{ |d| self.new(d) }
+          else
+            return self.new(d)
+          end
         end
 
         def api_uri(*args)
@@ -24,6 +31,30 @@ module Bixby
         end
 
       end # self
+
+      def initialize(hash=nil)
+        return if hash.nil?
+
+        hash.each do |k,v|
+          instance_variable_set("@#{k}", v)
+          next if self.respond_to?(k.to_sym)
+          code = <<-EOF
+          def #{k}()
+            @#{k}
+          end
+          EOF
+          eval(code)
+        end
+
+        def [](key)
+          if self.respond_to?(key.to_sym) then
+            return self.send(key.to_sym)
+          end
+          return nil
+        end
+
+      end
+
     end
   end
 end
