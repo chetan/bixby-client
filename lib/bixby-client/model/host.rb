@@ -9,6 +9,15 @@ module Bixby
       end
 
       def self.find(id)
+        get("/hosts/#{id}")
+      end
+
+      def self.update(id, data)
+        put("/hosts/#{id}", data)
+      end
+
+      def save
+        # TODO
       end
 
     end
