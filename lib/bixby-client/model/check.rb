@@ -9,6 +9,15 @@ module Bixby
       end
 
       def self.find(id)
+        get("/checks/#{id}")
+      end
+
+      def self.update(id, data)
+        put("/checks/#{id}", data)
+      end
+
+      def self.destroy(id)
+        delete("/checks/#{id}")
       end
 
     end
