@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chetan Sarva"]
-  s.date = "2013-10-30"
+  s.date = "2013-11-13"
   s.description = "Bixby Client"
   s.email = "chetan@pixelcop.net"
   s.executables = ["bixby"]
@@ -47,6 +47,7 @@ Gem::Specification.new do |s|
     "lib/bixby-client/modules.rb",
     "lib/bixby-client/modules/inventory.rb",
     "lib/bixby-client/modules/metrics.rb",
+    "lib/bixby-client/modules/monitoring.rb",
     "lib/bixby-client/modules/repository.rb",
     "lib/bixby-client/patch/shellout.rb",
     "lib/bixby-client/platform_util.rb",
@@ -99,11 +100,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<pry>, [">= 0"])
       s.add_development_dependency(%q<debugger>, [">= 0"])
       s.add_development_dependency(%q<debugger-pry>, [">= 0"])
-      s.add_development_dependency(%q<simplecov>, [">= 0"])
-      s.add_development_dependency(%q<micron>, [">= 0"])
-      s.add_development_dependency(%q<coveralls>, [">= 0"])
-      s.add_development_dependency(%q<webmock>, [">= 0"])
-      s.add_development_dependency(%q<mocha>, [">= 0"])
       s.add_development_dependency(%q<test_guard>, [">= 0"])
       s.add_development_dependency(%q<rb-inotify>, [">= 0"])
       s.add_development_dependency(%q<rb-fsevent>, [">= 0"])
@@ -124,11 +120,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<pry>, [">= 0"])
       s.add_dependency(%q<debugger>, [">= 0"])
       s.add_dependency(%q<debugger-pry>, [">= 0"])
-      s.add_dependency(%q<simplecov>, [">= 0"])
-      s.add_dependency(%q<micron>, [">= 0"])
-      s.add_dependency(%q<coveralls>, [">= 0"])
-      s.add_dependency(%q<webmock>, [">= 0"])
-      s.add_dependency(%q<mocha>, [">= 0"])
       s.add_dependency(%q<test_guard>, [">= 0"])
       s.add_dependency(%q<rb-inotify>, [">= 0"])
       s.add_dependency(%q<rb-fsevent>, [">= 0"])
@@ -150,11 +141,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<pry>, [">= 0"])
     s.add_dependency(%q<debugger>, [">= 0"])
     s.add_dependency(%q<debugger-pry>, [">= 0"])
-    s.add_dependency(%q<simplecov>, [">= 0"])
-    s.add_dependency(%q<micron>, [">= 0"])
-    s.add_dependency(%q<coveralls>, [">= 0"])
-    s.add_dependency(%q<webmock>, [">= 0"])
-    s.add_dependency(%q<mocha>, [">= 0"])
     s.add_dependency(%q<test_guard>, [">= 0"])
     s.add_dependency(%q<rb-inotify>, [">= 0"])
     s.add_dependency(%q<rb-fsevent>, [">= 0"])
