@@ -34,8 +34,17 @@ module Bixby
 
         # Setup the ENV for exec
         def setup_env
+          # use the correct ruby bin
+          path = ENV["PATH"].dup
+          ruby_dir = RbConfig::CONFIG['bindir']
+          if !path.include? ruby_dir then
+            ENV["PATH"] = "#{ruby_dir}:#{path}"
+          end
+
           # stick ourselves in RUBYLIB to speedup exec time
           ENV["RUBYLIB"] = File.expand_path("../../../..", __FILE__)
+
+          # load helper script
           ENV["RUBYOPT"] = '-rbixby-client/script'
         end
 
