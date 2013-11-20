@@ -9,8 +9,13 @@ module Bixby
         @root = root
       end
 
+      # Look for a script matchign the given [partial] filename
+      #
+      # @param [String] script
+      #
+      # @return [Array<String>] matches
       def find_script(script)
-        # try to locate script
+        return nil if script.nil? or script.empty?
         return script if File.exists? script
 
         # try relative path

@@ -15,21 +15,31 @@ module Bixby
           str = argv.shift
           scripts = FileFinder.new(Bixby.repo).find_script(str)
 
-          if scripts.kind_of?(Array)
+          if scripts.nil? then
+            $stderr.puts "Error: missing input"
+            $stderr.puts "usage: #{$0} run <script> [args ...]"
+            return exit 1
+
+          elsif scripts.kind_of?(Array)
+
             if scripts.size > 1 then
               $stderr.puts "Found #{scripts.size} scripts matching '#{str}'. Please be more explicit"
               scripts.each do |s|
                 puts " * #{s}"
               end
               return 1
+
             elsif scripts.empty? then
               $stderr.puts "No scripts matched '#{str}'. Try again"
               return 1
             end
+
+            # only one match
+            scripts = scripts.shift
           end
 
           setup_env()
-          exec(scripts.shift, *argv)
+          exec(scripts, *argv)
         end
 
         # Setup the ENV for exec
