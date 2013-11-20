@@ -1,4 +1,5 @@
 
+require "oj"
 require "bixby-client"
 require "fileutils"
 require "mixlib/shellout"
