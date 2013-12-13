@@ -79,7 +79,6 @@ module Bixby
           if res.error? then
             raise "error" # TODO
           end
-          puts res.body
           true
         end
 
