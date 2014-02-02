@@ -23,9 +23,9 @@ module Bixby
         return s if File.exists? s
 
         # try searching
-        matches = find_all_files(@root).find_all{ |f| f.include? script }.sort { |a,b|
-          ld(script, File.basename(a)) <=> ld(script, File.basename(b))
-        }
+        matches = find_all_files(@root).
+                    find_all { |f| f.include?("/bin/") && f.include?(script) }.
+                    sort { |a,b| ld(script, File.basename(a)) <=> ld(script, File.basename(b)) }
 
         return matches if matches.size == 1 # only one result, just return it
 
