@@ -37,4 +37,5 @@ group :test do
 
   gem "webmock", :require => false
   gem "mocha",   :require => false
+  gem "psych"
 end
