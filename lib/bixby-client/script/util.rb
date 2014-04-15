@@ -41,6 +41,16 @@ module Bixby
         cmd
       end
 
+      # Simple wrapper around #systemu which prepends sudo to the command
+      #
+      # @param [Array] args
+      #
+      # @return [Mixlib::ShellOut]
+      def sudo(*args)
+        args.first = "sudo #{args.first}"
+        systemu(*args)
+      end
+
     end
   end
 end
