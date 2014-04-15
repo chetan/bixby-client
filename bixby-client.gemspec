@@ -9,8 +9,9 @@ Gem::Specification.new do |s|
   s.version = "0.4.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib"]
   s.authors = ["Chetan Sarva"]
-  s.date = "2013-11-21"
+  s.date = "2014-04-15"
   s.description = "Bixby Client"
   s.email = "chetan@pixelcop.net"
   s.executables = ["bixby"]
@@ -50,8 +51,11 @@ Gem::Specification.new do |s|
     "lib/bixby-client/modules/monitoring.rb",
     "lib/bixby-client/modules/repository.rb",
     "lib/bixby-client/patch/shellout.rb",
-    "lib/bixby-client/platform_util.rb",
     "lib/bixby-client/script.rb",
+    "lib/bixby-client/script/bundle.rb",
+    "lib/bixby-client/script/distro.rb",
+    "lib/bixby-client/script/platform.rb",
+    "lib/bixby-client/script/util.rb",
     "lib/bixby-client/script_util.rb",
     "tasks/coverage.rake",
     "tasks/coveralls.rake",
@@ -77,8 +81,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/chetan/bixby-client"
   s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = "2.1.5"
+  s.rubygems_version = "2.2.2"
   s.summary = "Bixby Client"
 
   if s.respond_to? :specification_version then
