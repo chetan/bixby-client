@@ -16,10 +16,18 @@ module PlatformUtil
     uname =~ /linux/
   end
 
-  def win?
+  def solaris?
+    uname =~ /solaris/
+  end
 
+  def win?
+    uname =~ /mswin|mingw|bccwin|wince|cygwin/
   end
   alias :windows? :win?
+
+  def bsd?
+    uname =~ /freebsd|netbsd|openbsd/
+  end
 
 end # PlatformUtil
 end # Bixby
