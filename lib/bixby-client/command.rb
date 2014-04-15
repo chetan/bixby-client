@@ -3,7 +3,6 @@ module Bixby
 class Command
 
   include Bixby::Log
-  include Bixby::PlatformUtil
   include Bixby::ScriptUtil
 
   def initialize()

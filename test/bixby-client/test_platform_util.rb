@@ -15,7 +15,7 @@ module Test
   end
 
   class FooUtil
-    include PlatformUtil
+    include Bixby::Script::Platform
   end
 
 end

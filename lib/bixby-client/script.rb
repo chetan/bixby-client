@@ -7,9 +7,9 @@ require "mixlib/shellout"
 Bixby::Log.setup_logger()
 
 class Object
-  include Bixby::PlatformUtil
-  include Bixby::ScriptUtil
+
   include Bixby::Log
+  include Bixby::ScriptUtil
 
   # override to create logger based on script name
   def log
