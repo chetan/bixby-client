@@ -47,7 +47,7 @@ module Bixby
       #
       # @return [Mixlib::ShellOut]
       def sudo(*args)
-        args.first = "sudo #{args.first}"
+        args[0] = "sudo #{args.first}"
         systemu(*args)
       end
 
