@@ -30,6 +30,16 @@ module Bixby
         uname =~ /freebsd|netbsd|openbsd/
       end
 
+      # architectures
+
+      def amd64?
+        RbConfig::CONFIG['target_cpu'] == "x86_64"
+      end
+
+      def x86?
+        RbConfig::CONFIG['target_cpu'] =~ /i[3-6]86/
+      end
+
     end
   end
 end
