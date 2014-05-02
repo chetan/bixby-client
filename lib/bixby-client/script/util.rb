@@ -41,12 +41,31 @@ module Bixby
         cmd
       end
 
+      def logged_systemu(*args)
+        cmd = systemu(*args)
+        logger && logger.debug {
+          s = cmd.command
+          s += "\nSTATUS: #{cmd.exitstatus}" if !cmd.success?
+          s += "\nSTDOUT:\n#{cmd.stdout}" if !cmd.stdout.strip.empty?
+          s += "\nSTDERR:\n#{cmd.stderr}" if !cmd.stderr.strip.empty?
+          s
+        }
+        cmd
+      end
+
       # Simple wrapper around #systemu which prepends sudo to the command
       #
       # @param [Array] args
       #
       # @return [Mixlib::ShellOut]
       def sudo(*args)
+        if args.last.kind_of? Hash then
+          opts = args.last
+          if opts[:env] && opts[:env]["PATH"] then
+            path = opts[:env]["PATH"]
+            args[0] = "env PATH=#{path} #{args.first}"
+          end
+        end
         args[0] = "sudo #{args.first}"
         systemu(*args)
       end
@@ -58,7 +77,7 @@ module Bixby
       # @return [Mixlib::ShellOut]
       def logged_sudo(*args)
         cmd = sudo(*args)
-        logger.info {
+        logger && logger.debug {
           s = cmd.command
           s += "\nSTATUS: #{cmd.exitstatus}" if !cmd.success?
           s += "\nSTDOUT:\n#{cmd.stdout}" if !cmd.stdout.strip.empty?
