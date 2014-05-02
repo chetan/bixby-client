@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".testguardrc",
     ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
