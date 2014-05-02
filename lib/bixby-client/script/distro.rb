@@ -19,7 +19,9 @@ module Bixby
       def ubuntu_version
         # e.g., Ubuntu 13.04
         etc_issue =~ /Ubuntu (\d+\.\d+(\.\d+)?)/
-        SemVer.parse($1)
+        ver = $1
+        ver = "#{ver}.0" if ver.split(/\./).size == 2
+        SemVer.parse("v#{ver}")
       end
 
       def centos?
@@ -30,7 +32,8 @@ module Bixby
       def centos_version
         # e.g., CentOS release 5.10
         etc_issue =~ /CentOS release (\d+\.\d+)/
-        SemVer.parse($1)
+        ver = $1
+        SemVer.parse("v#{ver}.0")
       end
 
       def amazon_linux?
