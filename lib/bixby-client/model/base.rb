@@ -1,4 +1,6 @@
 
+require "httpi"
+
 module Bixby
   module Model
     class Base
