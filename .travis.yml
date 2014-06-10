@@ -8,7 +8,7 @@ after_script: "rake coveralls"
 
 language: ruby
 rvm:
-  - 2.0.0
+  - 2.1.1
   - 1.9.3
 
 branches:
