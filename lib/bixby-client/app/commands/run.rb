@@ -17,7 +17,7 @@ module Bixby
 
           if scripts.nil? then
             $stderr.puts "Error: missing input"
-            $stderr.puts "usage: #{$0} run <script> [args ...]"
+            $stderr.puts "usage: bixby run <script> [args ...]"
             return exit 1
 
           elsif scripts.kind_of?(Array)
