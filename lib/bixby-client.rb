@@ -1,7 +1,6 @@
 
-require "api-auth"
-
 require "bixby-common"
+require "bixby-auth"
 
 require "bixby-client/script_util"
 require "bixby-client/model"

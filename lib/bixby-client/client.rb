@@ -1,7 +1,7 @@
 
-require "api-auth"
 require "curb"
 
+require "bixby-auth"
 require "bixby-client/client/version"
 
 module Bixby

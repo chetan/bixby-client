@@ -8,13 +8,6 @@ GIT
       hitimes
 
 GIT
-  remote: https://github.com/chetan/api_auth.git
-  revision: 2ced7ba3afcc4d81e8a24e3d89f569b38b1e10a0
-  branch: bixby
-  specs:
-    api-auth (1.0.3)
-
-GIT
   remote: https://github.com/chetan/jeweler.git
   revision: b1f048d0ee6bc9febbcadb52b75b77e734782eb4
   branch: bixby
@@ -56,13 +49,14 @@ GEM
     addressable (2.3.6)
     ansi (1.4.3)
     awesome_print (1.2.0)
-    bixby-common (0.4.12)
-      api-auth
-      faye-websocket
-      httpi
-      logging
-      multi_json
-      semver2
+    bixby-auth (0.1.0)
+    bixby-common (0.5.0)
+      bixby-auth (~> 0.1)
+      faye-websocket (~> 0.7)
+      httpi (~> 2.1)
+      logging (~> 1.8)
+      multi_json (~> 1.8)
+      semver2 (~> 3.3)
     builder (3.2.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
@@ -100,9 +94,9 @@ GEM
     eventmachine (1.0.3)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
-    faye-websocket (0.7.2)
+    faye-websocket (0.8.0)
       eventmachine (>= 0.12.0)
-      websocket-driver (>= 0.3.1)
+      websocket-driver (>= 0.4.0)
     ffi (1.9.3)
     fuzzy_file_finder (1.0.4)
     git (1.2.6)
@@ -119,9 +113,8 @@ GEM
     highline (1.6.21)
     hirb (0.7.1)
     hitimes (1.2.1)
-    httpi (2.1.0)
+    httpi (2.3.0)
       rack
-      rubyntlm (~> 0.3.2)
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
@@ -141,7 +134,7 @@ GEM
     mixlib-shellout (1.4.0)
     mocha (1.0.0)
       metaclass (~> 0.0.1)
-    multi_json (1.9.2)
+    multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nio4r (1.0.0)
@@ -171,9 +164,8 @@ GEM
     redcarpet (3.1.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rubyntlm (0.3.4)
     safe_yaml (1.0.2)
-    semver2 (3.3.3)
+    semver2 (3.4.0)
     simplecov-console (0.1.3)
       colorize
       hirb
@@ -189,14 +181,13 @@ GEM
     webmock (1.17.4)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
-    websocket-driver (0.3.2)
+    websocket-driver (0.4.0)
     yard (0.8.7.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  api-auth!
   bixby-common
   bundler
   coveralls

@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem 'bixby-common'
 # gem 'bixby-common', :path => '../common'
+# gem "bixby-auth", :path => "../auth"
 
 gem 'multi_json'
 gem 'oj'
@@ -9,8 +10,6 @@ gem 'httpi'
 gem 'curb'
 gem 'mixlib-shellout'
 gem 'fuzzy_file_finder'
-
-gem "api-auth", :git => "https://github.com/chetan/api_auth.git", :branch => "bixby"
 
 group :development do
 
