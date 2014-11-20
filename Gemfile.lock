@@ -1,15 +1,6 @@
 GIT
-  remote: git://github.com/chetan/micron.git
-  revision: 17e46aaf88e16870fa4ac0374016434823c2c46e
-  specs:
-    micron (0.5.0)
-      ansi
-      easycov
-      hitimes
-
-GIT
-  remote: https://github.com/chetan/jeweler.git
-  revision: b1f048d0ee6bc9febbcadb52b75b77e734782eb4
+  remote: git://github.com/chetan/jeweler.git
+  revision: b90381a3958daae7f3ce3d8c4d710fe39e72443b
   branch: bixby
   specs:
     jeweler (2.0.1)
@@ -20,10 +11,18 @@ GIT
       highline (>= 1.6.15)
       nokogiri (>= 1.5.10)
       rake
-      rdoc
 
 GIT
-  remote: https://github.com/chetan/simplecov.git
+  remote: git://github.com/chetan/micron.git
+  revision: 17e46aaf88e16870fa4ac0374016434823c2c46e
+  specs:
+    micron (0.5.0)
+      ansi
+      easycov
+      hitimes
+
+GIT
+  remote: git://github.com/chetan/simplecov.git
   revision: 308449b2193700f7a9a4291821a323110838fbc0
   branch: inline_nocov
   specs:
@@ -32,7 +31,7 @@ GIT
       simplecov-html (~> 0.7.1)
 
 GIT
-  remote: https://github.com/chetan/test_guard.git
+  remote: git://github.com/chetan/test_guard.git
   revision: 178e47e2e57dc83060d6cabc18f206916b9d02f2
   specs:
     test_guard (0.2.1)
@@ -58,11 +57,8 @@ GEM
       multi_json (~> 1.8)
       semver2 (~> 3.3)
     builder (3.2.2)
-    celluloid (0.15.2)
-      timers (~> 1.1.0)
-    celluloid-io (0.15.0)
-      celluloid (>= 0.15.0)
-      nio4r (>= 0.5.0)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
     coderay (1.1.0)
     colorize (0.7.2)
     columnize (0.3.6)
@@ -99,28 +95,25 @@ GEM
       websocket-driver (>= 0.4.0)
     ffi (1.9.3)
     fuzzy_file_finder (1.0.4)
-    git (1.2.6)
-    github_api (0.11.3)
+    git (1.2.8)
+    github_api (0.12.2)
       addressable (~> 2.3)
-      descendants_tracker (~> 0.0.1)
+      descendants_tracker (~> 0.0.4)
       faraday (~> 0.8, < 0.10)
-      hashie (>= 1.2)
+      hashie (>= 3.3)
       multi_json (>= 1.7.5, < 2.0)
-      nokogiri (~> 1.6.0)
+      nokogiri (~> 1.6.3)
       oauth2
     growl (1.0.3)
-    hashie (2.1.1)
+    hashie (3.3.1)
     highline (1.6.21)
     hirb (0.7.1)
     hitimes (1.2.1)
     httpi (2.3.0)
       rack
-    json (1.8.1)
-    jwt (0.1.11)
-      multi_json (>= 1.5)
-    listen (2.7.1)
+    jwt (1.0.0)
+    listen (2.8.0)
       celluloid (>= 0.15.2)
-      celluloid-io (>= 0.15.0)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     little-plugger (1.1.3)
@@ -130,19 +123,18 @@ GEM
     metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (2.2)
-    mini_portile (0.5.3)
+    mini_portile (0.6.1)
     mixlib-shellout (1.4.0)
     mocha (1.0.0)
       metaclass (~> 0.0.1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    nio4r (1.0.0)
-    nokogiri (1.6.1)
-      mini_portile (~> 0.5.0)
-    oauth2 (0.9.3)
+    nokogiri (1.6.4.1)
+      mini_portile (~> 0.6.0)
+    oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
-      jwt (~> 0.1.8)
+      jwt (~> 1.0)
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (~> 1.2)
@@ -153,14 +145,12 @@ GEM
       slop (~> 3.4)
     psych (2.0.5)
     rack (1.5.2)
-    rake (10.2.2)
+    rake (10.3.2)
     rb-fchange (0.0.6)
       ffi
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
-    rdoc (4.1.1)
-      json (~> 1.4)
     redcarpet (3.1.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -175,8 +165,9 @@ GEM
     term-ansicolor (1.3.0)
       tins (~> 1.0)
     thor (0.19.1)
-    thread_safe (0.3.3)
-    timers (1.1.0)
+    thread_safe (0.3.4)
+    timers (4.0.1)
+      hitimes
     tins (1.1.0)
     webmock (1.17.4)
       addressable (>= 2.2.7)
