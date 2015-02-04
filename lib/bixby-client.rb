@@ -1,4 +1,8 @@
 
+# try to avoid json/yaml/psych bug
+# see https://github.com/chetan/psych_load_bug
+require "yaml"
+
 require "bixby-common"
 require "bixby-auth"
 
