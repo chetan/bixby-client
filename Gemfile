@@ -7,7 +7,6 @@ gem 'bixby-common'
 gem 'multi_json'
 gem 'oj'
 gem 'httpi'
-gem 'curb'
 gem 'mixlib-shellout'
 gem 'fuzzy_file_finder'
 

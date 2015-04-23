@@ -1,6 +1,4 @@
 
-require "curb"
-
 require "bixby-auth"
 require "bixby-client/client/version"
 
